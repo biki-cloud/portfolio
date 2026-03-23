@@ -1,0 +1,26 @@
+---
+const steps = [
+  { num: '01', title: 'お問い合わせ', body: 'フォームよりお気軽にご連絡ください。まずは現状のお悩みをお聞きします。' },
+  { num: '02', title: 'ヒアリング＆制作', body: '会社の雰囲気・カラー・掲載したい写真などをヒアリングし、テンプレートをカスタマイズして制作します。' },
+  { num: '03', title: '確認・修正', body: 'プレビューURLを共有します。気になる点があれば遠慮なくご指摘ください。修正対応します。' },
+  { num: '04', title: '納品・公開', body: 'ドメイン設定・公開作業まで対応します。公開後のサポートも月額保守で継続してご利用いただけます。' },
+];
+---
+<section class="py-24 px-6" style="background-color: var(--color-surface);">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-xs tracking-[0.3em] uppercase mb-4" style="color: var(--color-accent);">Flow</p>
+      <h2 class="text-3xl font-bold section-title section-title-center" style="color: var(--color-dark);">制作の流れ</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      {steps.map((step, i) => (
+        <div class={`text-center reveal reveal-delay-${i + 1}`}>
+          <p class="text-5xl font-light mb-4" style="color: var(--color-border);">{step.num}</p>
+          <h3 class="text-base font-semibold mb-3" style="color: var(--color-dark);">{step.title}</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--color-sub);">{step.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

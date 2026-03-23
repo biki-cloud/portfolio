@@ -1,0 +1,37 @@
+---
+const reasons = [
+  {
+    title: '施工事例が映えるデザイン',
+    body: 'Before/After写真・ギャラリー・お客様の声など、外構業界に必要な機能をすべて標準搭載。施工写真の魅力を最大限に引き出します。',
+    icon: '📸',
+  },
+  {
+    title: 'カラーカスタマイズ対応',
+    body: '会社のイメージカラーに合わせてサイト全体の色を変更します。「うちの会社らしい」デザインに仕上げます。',
+    icon: '🎨',
+  },
+  {
+    title: '外構業界の課題を知っている',
+    body: '自分自身が外構工事を発注した経験から、業界の現場感を理解しています。外構屋さんに本当に必要な機能だけを搭載しています。',
+    icon: '🏡',
+  },
+];
+---
+<section class="py-24 px-6" style="background-color: var(--color-bg);">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-xs tracking-[0.3em] uppercase mb-4" style="color: var(--color-accent);">Why Choose Us</p>
+      <h2 class="text-3xl font-bold section-title section-title-center" style="color: var(--color-dark);">外構屋に特化している理由</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {reasons.map((r, i) => (
+        <div class={`p-8 reveal reveal-delay-${i + 1}`} style="background-color: var(--color-surface);">
+          <div class="text-4xl mb-4">{r.icon}</div>
+          <h3 class="text-lg font-semibold mb-3" style="color: var(--color-dark);">{r.title}</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--color-sub);">{r.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+---
+const faqs = [
+  {
+    q: '費用はどのくらいかかりますか？',
+    a: 'ライト版が初期3万円・月額3,000円、フル版が初期5万円・月額5,000円です。初案件限定のモニター価格（初期1万円）もご用意しています。ドメイン代（年1,000〜2,000円）は実費別途となります。',
+  },
+  {
+    q: '納期はどのくらいですか？',
+    a: '素材（写真・テキスト）をいただいてから、おおよそ2〜3週間での納品を予定しています。',
+  },
+  {
+    q: '写真や文章は自分で用意する必要がありますか？',
+    a: '施工写真はお客様にご用意いただきます。文章はヒアリングをもとに制作側でご提案することも可能です。',
+  },
+  {
+    q: '公開後に自分でサイトを更新できますか？',
+    a: 'フル版ではMicroCMSを採用しており、施工事例やお知らせを管理画面から簡単に更新できます。ライト版は更新が必要な場合は月額保守内で対応します。',
+  },
+  {
+    q: 'スマホでも見られますか？',
+    a: 'はい。全テンプレートがスマートフォン・タブレット・PCに対応したレスポンシブデザインです。',
+  },
+];
+---
+<section class="py-24 px-6" style="background-color: var(--color-bg);">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-xs tracking-[0.3em] uppercase mb-4" style="color: var(--color-accent);">FAQ</p>
+      <h2 class="text-3xl font-bold section-title section-title-center" style="color: var(--color-dark);">よくある質問</h2>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, i) => (
+        <div class={`p-6 reveal reveal-delay-${Math.min(i + 1, 4)}`} style="background-color: var(--color-surface);">
+          <p class="font-semibold mb-3" style="color: var(--color-dark);">Q. {faq.q}</p>
+          <p class="text-sm leading-relaxed" style="color: var(--color-sub);">A. {faq.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
