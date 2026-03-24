@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56">
+  <!-- アイコン部分: ネイビー背景の正方形にDW -->
+  <rect x="0" y="4" width="48" height="48" rx="8" fill="#1a2744"/>
+  <text x="24" y="36" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#c9a84c" text-anchor="middle" letter-spacing="-0.5">DW</text>
+
+  <!-- テキスト部分 -->
+  <text x="62" y="30" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="600" fill="#1a2744" letter-spacing="1">Dodo Works</text>
+  <text x="63" y="46" font-family="'Noto Sans JP', sans-serif" font-size="10" font-weight="400" fill="#6b7a99" letter-spacing="2">外構屋専門HP制作</text>
+</svg>

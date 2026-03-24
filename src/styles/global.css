@@ -2,15 +2,15 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg:      #f5f2ed;
+  --color-bg:      #f0f2f7;
   --color-surface: #ffffff;
-  --color-border:  #ddd9d2;
-  --color-text:    #2c2a26;
-  --color-sub:     #7a7770;
-  --color-accent:  #2d4a3e;
-  --color-warm:    #b8935a;
-  --color-warm-lt: #f5efe6;
-  --color-dark:    #1c1a17;
+  --color-border:  #d4d9e8;
+  --color-text:    #1e2535;
+  --color-sub:     #6b7a99;
+  --color-accent:  #1a2744;
+  --color-warm:    #c9a84c;
+  --color-warm-lt: #fdf8ed;
+  --color-dark:    #0f1829;
 }
 
 html { scroll-behavior: smooth; }
