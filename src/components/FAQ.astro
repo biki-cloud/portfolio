@@ -29,13 +29,48 @@ const faqs = [
       <h2 class="text-3xl font-bold section-title section-title-center" style="color: var(--color-dark);">よくある質問</h2>
     </div>
 
-    <div class="space-y-4">
+    <div class="space-y-3">
       {faqs.map((faq, i) => (
-        <div class={`p-6 reveal reveal-delay-${Math.min(i + 1, 4)}`} style="background-color: var(--color-surface);">
-          <p class="font-semibold mb-3" style="color: var(--color-dark);">Q. {faq.q}</p>
-          <p class="text-sm leading-relaxed" style="color: var(--color-sub);">A. {faq.a}</p>
-        </div>
+        <details class={`faq-item reveal reveal-delay-${Math.min(i + 1, 4)}`} style="background-color: var(--color-surface);">
+          <summary class="faq-summary px-6 py-5 cursor-pointer font-semibold flex justify-between items-center gap-4" style="color: var(--color-dark);">
+            <span>Q. {faq.q}</span>
+            <span class="faq-icon flex-shrink-0 w-5 h-5 flex items-center justify-center" style="color: var(--color-warm);">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </summary>
+          <div class="faq-body px-6 pb-5">
+            <p class="text-sm leading-relaxed pt-2" style="color: var(--color-sub); border-top: 1px solid var(--color-border);">A. {faq.a}</p>
+          </div>
+        </details>
       ))}
     </div>
   </div>
 </section>
+
+<style>
+.faq-item {
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+.faq-item:hover {
+  box-shadow: 0 2px 12px rgba(15, 24, 41, 0.07);
+}
+.faq-summary {
+  list-style: none;
+  user-select: none;
+}
+.faq-summary::-webkit-details-marker { display: none; }
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+details[open] .faq-icon {
+  transform: rotate(180deg);
+}
+.faq-body {
+  animation: faq-open 0.25s ease-out;
+}
+@keyframes faq-open {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
