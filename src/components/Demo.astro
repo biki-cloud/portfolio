@@ -3,19 +3,23 @@
 <section class="py-24 px-6" style="background-color: var(--color-bg);">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-16 reveal">
-      <p class="text-xs tracking-[0.3em] uppercase mb-4" style="color: var(--color-accent);">Works</p>
+      <p class="text-xs tracking-[0.3em] uppercase mb-4" style="color: var(--color-accent);">Demo</p>
       <h2 class="text-3xl font-bold section-title section-title-center" style="color: var(--color-dark);">制作デモ</h2>
       <p class="mt-6 text-sm" style="color: var(--color-sub);">実際に動くデモサイトをご覧いただけます</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- デモカード -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
       <!-- ライト版 -->
       <div class="reveal">
         <div class="overflow-hidden mb-4" style="background-color: var(--color-border); aspect-ratio: 16/10;">
           <img src="/demo-light.png" alt="ライト版デモ" class="w-full h-full object-cover object-top"
             onerror="this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.style.display='none';this.insertAdjacentHTML('afterend','<p style=\'color:var(--color-sub);font-size:0.75rem;letter-spacing:0.2em;\'>スクリーンショット準備中</p>')" />
         </div>
-        <h3 class="text-lg font-semibold mb-1" style="color: var(--color-dark);">ライト版</h3>
+        <div class="flex items-center gap-2 mb-1">
+          <h3 class="text-lg font-semibold" style="color: var(--color-dark);">ライト版</h3>
+          <span class="text-xs px-2 py-0.5 font-medium" style="background-color: #faeee8; color: #c0522a;">テラコッタ</span>
+        </div>
         <p class="text-sm mb-3" style="color: var(--color-sub);">1ページLP・シンプル構成</p>
         <a
           href="https://template-exterior-lite.pages.dev"
@@ -34,8 +38,11 @@
           <img src="/demo-full.png" alt="フル版デモ" class="w-full h-full object-cover object-top"
             onerror="this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.style.display='none';this.insertAdjacentHTML('afterend','<p style=\'color:var(--color-sub);font-size:0.75rem;letter-spacing:0.2em;\'>スクリーンショット準備中</p>')" />
         </div>
-        <h3 class="text-lg font-semibold mb-1" style="color: var(--color-dark);">フル版</h3>
-        <p class="text-sm mb-3" style="color: var(--color-sub);">MicroCMS付き・フルページ構成</p>
+        <div class="flex items-center gap-2 mb-1">
+          <h3 class="text-lg font-semibold" style="color: var(--color-dark);">フル版</h3>
+          <span class="text-xs px-2 py-0.5 font-medium" style="background-color: var(--color-warm-lt); color: var(--color-accent);">グリーン</span>
+        </div>
+        <p class="text-sm mb-3" style="color: var(--color-sub);">多ページ・CMS連携・施工事例管理</p>
         <a
           href="https://template-exterior.pages.dev"
           target="_blank"
@@ -47,5 +54,42 @@
         </a>
       </div>
     </div>
+
+    <!-- プラン比較表 -->
+    <div class="reveal">
+      <h3 class="text-xl font-bold text-center mb-8" style="color: var(--color-dark);">プラン比較</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm" style="border-collapse: collapse;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--color-accent);">
+              <th class="text-left py-4 pr-6 font-medium" style="color: var(--color-sub); width: 40%;">機能</th>
+              <th class="text-center py-4 px-4 font-bold" style="color: var(--color-dark);">ライト版</th>
+              <th class="text-center py-4 px-4 font-bold" style="color: var(--color-dark);">フル版</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { label: '初期費用',           lite: '3万円',  full: '5万円' },
+              { label: '月額',               lite: '3,000円', full: '5,000円' },
+              { label: 'ページ構成',         lite: '1ページLP', full: '6ページ' },
+              { label: '施工事例の管理',     lite: '×（静的）', full: '○（CMS）' },
+              { label: 'お知らせ・ブログ',   lite: '×',      full: '○' },
+              { label: '施工事例 詳細ページ',lite: '×',      full: '○' },
+              { label: 'カラー変更',         lite: '○',      full: '○' },
+              { label: 'Google Forms連携',   lite: '○',      full: '○' },
+              { label: 'SSL・独自ドメイン',  lite: '○',      full: '○' },
+              { label: 'こんな方に',         lite: 'まずHPが欲しい方', full: '施工事例で集客したい方' },
+            ].map((row, i) => (
+              <tr style={`border-bottom: 1px solid var(--color-border); background-color: ${i % 2 === 0 ? 'transparent' : 'var(--color-surface)'};`}>
+                <td class="py-3 pr-6 font-medium" style="color: var(--color-text);">{row.label}</td>
+                <td class="py-3 px-4 text-center" style="color: var(--color-sub);">{row.lite}</td>
+                <td class="py-3 px-4 text-center" style="color: var(--color-sub);">{row.full}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
 </section>
