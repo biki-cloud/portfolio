@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://portfolio.pages.dev',
+  site: 'https://dodoworks.net',
   output: 'static',
   vite: {
     plugins: [tailwindcss()]
