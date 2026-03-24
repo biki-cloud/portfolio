@@ -1,0 +1,156 @@
+---
+---
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+
+    <!-- ロゴ -->
+    <a href="#" class="flex-shrink-0">
+      <img src="/logo.svg" alt="Dodo Works" class="h-9" />
+    </a>
+
+    <!-- PC ナビ -->
+    <nav class="hidden md:flex items-center gap-8">
+      {[
+        { label: 'About',    href: '#about'   },
+        { label: '料金',     href: '#pricing' },
+        { label: 'デモ',     href: '#demo'    },
+        { label: '制作の流れ', href: '#flow'  },
+        { label: 'FAQ',      href: '#faq'     },
+      ].map(link => (
+        <a
+          href={link.href}
+          class="nav-link text-xs tracking-[0.15em] text-white opacity-80 hover:opacity-100 transition-opacity"
+          data-section={link.href.slice(1)}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="#contact"
+        class="text-xs tracking-[0.15em] px-5 py-2 border border-white border-opacity-40 text-white hover:bg-white hover:text-[#0f1829] transition-all duration-200"
+      >
+        お問い合わせ
+      </a>
+    </nav>
+
+    <!-- ハンバーガー（モバイル） -->
+    <button id="menu-btn" class="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8 focus:outline-none" aria-label="メニュー">
+      <span class="burger-line block h-px bg-white transition-all duration-300 origin-center"></span>
+      <span class="burger-line block h-px bg-white transition-all duration-300"></span>
+      <span class="burger-line block h-px bg-white transition-all duration-300 origin-center"></span>
+    </button>
+  </div>
+</header>
+
+<!-- モバイルメニュー -->
+<div id="mobile-menu" class="fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 opacity-0 pointer-events-none transition-opacity duration-300" style="background-color: rgba(15,24,41,0.98);">
+  {[
+    { label: 'About',    href: '#about'   },
+    { label: '料金',     href: '#pricing' },
+    { label: 'デモ',     href: '#demo'    },
+    { label: '制作の流れ', href: '#flow'  },
+    { label: 'FAQ',      href: '#faq'     },
+    { label: 'お問い合わせ', href: '#contact' },
+  ].map(link => (
+    <a
+      href={link.href}
+      class="mobile-nav-link text-white text-xl tracking-[0.2em] hover:text-[#c9a84c] transition-colors duration-200"
+    >
+      {link.label}
+    </a>
+  ))}
+</div>
+
+<script>
+  const navbar  = document.getElementById('navbar')!;
+  const menuBtn = document.getElementById('menu-btn')!;
+  const mobileMenu = document.getElementById('mobile-menu')!;
+  const burgerLines = menuBtn.querySelectorAll<HTMLElement>('.burger-line');
+  let menuOpen = false;
+
+  // スクロールで背景変化
+  function updateNavbar() {
+    if (window.scrollY > 40) {
+      navbar.style.backgroundColor = 'rgba(15,24,41,0.96)';
+      navbar.style.backdropFilter  = 'blur(12px)';
+      navbar.style.borderBottom    = '1px solid rgba(255,255,255,0.06)';
+    } else {
+      navbar.style.backgroundColor = 'transparent';
+      navbar.style.backdropFilter  = 'none';
+      navbar.style.borderBottom    = 'none';
+    }
+  }
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  updateNavbar();
+
+  // ハンバーガートグル
+  function toggleMenu() {
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      mobileMenu.style.opacity = '1';
+      mobileMenu.style.pointerEvents = 'auto';
+      burgerLines[0].style.transform = 'translateY(7px) rotate(45deg)';
+      burgerLines[1].style.opacity = '0';
+      burgerLines[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+    } else {
+      mobileMenu.style.opacity = '0';
+      mobileMenu.style.pointerEvents = 'none';
+      burgerLines[0].style.transform = '';
+      burgerLines[1].style.opacity = '1';
+      burgerLines[2].style.transform = '';
+    }
+  }
+  menuBtn.addEventListener('click', toggleMenu);
+
+  // モバイルリンクでメニューを閉じる
+  mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => { if (menuOpen) toggleMenu(); });
+  });
+
+  // アクティブセクション検出
+  const sections = ['about', 'pricing', 'demo', 'flow', 'faq', 'contact'];
+  const navLinks = document.querySelectorAll<HTMLElement>('.nav-link[data-section]');
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.dataset.section === id);
+          });
+        }
+      });
+    },
+    { threshold: 0.35 }
+  );
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
+  });
+</script>
+
+<style>
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #c9a84c;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+  .nav-link.active {
+    opacity: 1;
+    color: #c9a84c;
+  }
+</style>
