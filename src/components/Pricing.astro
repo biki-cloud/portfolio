@@ -21,12 +21,12 @@
         <p class="text-4xl font-bold mb-1" style="color: var(--color-accent);">¥30,000<span class="text-base font-normal"> 〜</span></p>
         <p class="text-sm mb-6" style="color: var(--color-sub);">月額保守 ¥3,000/月</p>
         <ul class="space-y-2 text-sm" style="color: var(--color-text);">
-          <li>✓ 3ページ構成（トップ・施工事例・問い合わせ）</li>
-          <li>✓ カラーカスタマイズ対応</li>
-          <li>✓ スマートフォン対応</li>
-          <li>✓ SSL・高速表示</li>
-          <li class="opacity-40">✗ CMS（自分で更新）</li>
-          <li class="opacity-40">✗ お知らせ・お客様の声機能</li>
+          <li>○ 3ページ構成（トップ・施工事例・問い合わせ）</li>
+          <li>○ カラーカスタマイズ対応</li>
+          <li>○ スマートフォン対応</li>
+          <li>○ SSL・高速表示</li>
+          <li class="opacity-40">× CMS（自分で更新）</li>
+          <li class="opacity-40">× お知らせ・お客様の声機能</li>
         </ul>
       </div>
 
@@ -38,12 +38,12 @@
         <p class="text-4xl font-bold mb-1 text-white">¥50,000<span class="text-base font-normal"> 〜</span></p>
         <p class="text-sm mb-6 text-white opacity-70">月額保守 ¥5,000/月</p>
         <ul class="space-y-2 text-sm text-white">
-          <li>✓ フルページ構成</li>
-          <li>✓ カラーカスタマイズ対応</li>
-          <li>✓ スマートフォン対応</li>
-          <li>✓ SSL・高速表示</li>
-          <li>✓ MicroCMS（施工事例を自分で更新可）</li>
-          <li>✓ お知らせ・お客様の声機能</li>
+          <li>○ フルページ構成</li>
+          <li>○ カラーカスタマイズ対応</li>
+          <li>○ スマートフォン対応</li>
+          <li>○ SSL・高速表示</li>
+          <li>○ MicroCMS（施工事例を自分で更新可）</li>
+          <li>○ お知らせ・お客様の声機能</li>
         </ul>
       </div>
     </div>
@@ -104,8 +104,8 @@
             ].map((row, i) => (
               <tr style={`border-bottom: 1px solid var(--color-border); background-color: ${i % 2 === 0 ? 'var(--color-surface)' : 'transparent'};`}>
                 <td class="py-3 pl-4 font-medium" style="color: var(--color-text);">{row.label}</td>
-                <td class="py-3 px-4 text-center text-base">{row.lite ? <span style="color: var(--color-warm);">✓</span> : <span class="opacity-30" style="color: var(--color-text);">✗</span>}</td>
-                <td class="py-3 px-4 text-center text-base">{row.full ? <span style="color: var(--color-warm);">✓</span> : <span class="opacity-30" style="color: var(--color-text);">✗</span>}</td>
+                <td class="py-3 px-4 text-center text-base">{row.lite ? <span style="color: var(--color-warm);">○</span> : <span class="opacity-30" style="color: var(--color-text);">×</span>}</td>
+                <td class="py-3 px-4 text-center text-base">{row.full ? <span style="color: var(--color-warm);">○</span> : <span class="opacity-30" style="color: var(--color-text);">×</span>}</td>
               </tr>
             ))}
 
@@ -127,8 +127,8 @@
             ].map((row, i) => (
               <tr style={`border-bottom: 1px solid var(--color-border); background-color: ${i % 2 === 0 ? 'var(--color-surface)' : 'transparent'};`}>
                 <td class="py-3 pl-4 font-medium" style="color: var(--color-text);">{row.label}</td>
-                <td class="py-3 px-4 text-center text-base">{row.lite ? <span style="color: var(--color-warm);">✓</span> : <span class="opacity-30" style="color: var(--color-text);">✗</span>}</td>
-                <td class="py-3 px-4 text-center text-base">{row.full ? <span style="color: var(--color-warm);">✓</span> : <span class="opacity-30" style="color: var(--color-text);">✗</span>}</td>
+                <td class="py-3 px-4 text-center text-base">{row.lite ? <span style="color: var(--color-warm);">○</span> : <span class="opacity-30" style="color: var(--color-text);">×</span>}</td>
+                <td class="py-3 px-4 text-center text-base">{row.full ? <span style="color: var(--color-warm);">○</span> : <span class="opacity-30" style="color: var(--color-text);">×</span>}</td>
               </tr>
             ))}
 
@@ -144,8 +144,8 @@
             ].map((row, i) => (
               <tr style={`border-bottom: 1px solid var(--color-border); background-color: ${i % 2 === 0 ? 'var(--color-surface)' : 'transparent'};`}>
                 <td class="py-3 pl-4 font-medium" style="color: var(--color-text);">{row.label}</td>
-                <td class="py-3 px-4 text-center text-base"><span class="opacity-30" style="color: var(--color-text);">✗</span></td>
-                <td class="py-3 px-4 text-center text-base"><span class="opacity-30" style="color: var(--color-text);">✗</span></td>
+                <td class="py-3 px-4 text-center text-base"><span class="opacity-30" style="color: var(--color-text);">×</span></td>
+                <td class="py-3 px-4 text-center text-base"><span class="opacity-30" style="color: var(--color-text);">×</span></td>
               </tr>
             ))}
 
@@ -159,8 +159,8 @@
             ].map((row, i) => (
               <tr style={`border-bottom: 1px solid var(--color-border); background-color: ${i % 2 === 0 ? 'var(--color-surface)' : 'transparent'};`}>
                 <td class="py-3 pl-4 font-medium" style="color: var(--color-text);">{row.label}</td>
-                <td class="py-3 px-4 text-center text-base">{row.lite ? <span style="color: var(--color-warm);">✓</span> : <span class="opacity-30" style="color: var(--color-text);">✗</span>}</td>
-                <td class="py-3 px-4 text-center text-base">{row.full ? <span style="color: var(--color-warm);">✓</span> : <span class="opacity-30" style="color: var(--color-text);">✗</span>}</td>
+                <td class="py-3 px-4 text-center text-base">{row.lite ? <span style="color: var(--color-warm);">○</span> : <span class="opacity-30" style="color: var(--color-text);">×</span>}</td>
+                <td class="py-3 px-4 text-center text-base">{row.full ? <span style="color: var(--color-warm);">○</span> : <span class="opacity-30" style="color: var(--color-text);">×</span>}</td>
               </tr>
             ))}
 
@@ -178,12 +178,12 @@
                 <td class="py-3 pl-4 font-medium" style="color: var(--color-text);">{row.label}</td>
                 <td class="py-3 px-4 text-center" style="color: var(--color-sub);">
                   {typeof row.lite === 'boolean'
-                    ? (row.lite ? <span class="text-base" style="color: var(--color-warm);">✓</span> : <span class="text-base opacity-30" style="color: var(--color-text);">✗</span>)
+                    ? (row.lite ? <span class="text-base" style="color: var(--color-warm);">○</span> : <span class="text-base opacity-30" style="color: var(--color-text);">×</span>)
                     : row.lite}
                 </td>
                 <td class="py-3 px-4 text-center" style="color: var(--color-sub);">
                   {typeof row.full === 'boolean'
-                    ? (row.full ? <span class="text-base" style="color: var(--color-warm);">✓</span> : <span class="text-base opacity-30" style="color: var(--color-text);">✗</span>)
+                    ? (row.full ? <span class="text-base" style="color: var(--color-warm);">○</span> : <span class="text-base opacity-30" style="color: var(--color-text);">×</span>)
                     : row.full}
                 </td>
               </tr>
