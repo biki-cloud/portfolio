@@ -1,7 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56">
-  <!-- アイコン部分: ネイビー背景の正方形にDW -->
+  <!-- アイコン部分: ネイビー背景 + ドードー鳥シルエット -->
   <rect x="0" y="4" width="48" height="48" rx="8" fill="#1a2744"/>
-  <text x="24" y="36" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#c9a84c" text-anchor="middle" letter-spacing="-0.5">DW</text>
+  <!-- 体 -->
+  <ellipse cx="27" cy="32" rx="11" ry="9" fill="#c9a84c"/>
+  <!-- 頭 -->
+  <circle cx="17" cy="21" r="5" fill="#c9a84c"/>
+  <!-- くちばし -->
+  <path d="M13 20 Q8 21 7.5 23 Q9 24.5 13 23.5 Z" fill="#c9a84c"/>
+  <!-- 首 -->
+  <path d="M17 25.5 Q19 28 22 29.5 Q20 30.5 17.5 29.5 Q15 27.5 15 25.5 Z" fill="#c9a84c"/>
+  <!-- 翼 -->
+  <path d="M23 25 Q30 23 36 27 Q34 31 28 32 Q23 31 23 25 Z" fill="#b8943a" opacity="0.6"/>
+  <!-- 尾羽 -->
+  <path d="M37 27.5 Q42 24 43.5 26 Q42 29 39 30.5 Q37 29.5 37 27.5 Z" fill="#c9a84c"/>
+  <!-- 脚（左） -->
+  <rect x="21" y="40" width="3" height="6" rx="1.5" fill="#c9a84c"/>
+  <rect x="18" y="45" width="6" height="1.5" rx="0.8" fill="#c9a84c"/>
+  <!-- 脚（右） -->
+  <rect x="27" y="40" width="3" height="6" rx="1.5" fill="#c9a84c"/>
+  <rect x="24" y="45" width="6" height="1.5" rx="0.8" fill="#c9a84c"/>
+  <!-- 目 -->
+  <circle cx="14.5" cy="20" r="1.4" fill="#1a2744"/>
+  <circle cx="14.2" cy="19.7" r="0.4" fill="#c9a84c"/>
 
   <!-- テキスト部分 -->
   <text x="62" y="30" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="600" fill="#1a2744" letter-spacing="1">Dodo Works</text>

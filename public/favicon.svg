@@ -1,4 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#0f1829"/>
-  <text x="32" y="44" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#c9a84c" text-anchor="middle" letter-spacing="-1">DW</text>
+  <rect width="64" height="64" rx="12" fill="#1a2744"/>
+  <!-- ドードー鳥シルエット（ゴールド） -->
+  <!-- 体（大きな楕円） -->
+  <ellipse cx="33" cy="36" rx="16" ry="13" fill="#c9a84c"/>
+  <!-- 頭（小さな円） -->
+  <circle cx="22" cy="20" r="7" fill="#c9a84c"/>
+  <!-- くちばし（太く丸みのある形） -->
+  <path d="M16 19 Q10 20 9 23 Q10 25 16 24 Z" fill="#c9a84c"/>
+  <!-- 首（頭と体をつなぐ） -->
+  <path d="M22 26 Q24 30 28 32 Q25 33 22 32 Q18 29 18 26 Z" fill="#c9a84c"/>
+  <!-- 翼のアクセント（少し暗めの線） -->
+  <path d="M30 28 Q38 26 46 30 Q43 35 35 36 Q30 35 30 28 Z" fill="#b8943a" opacity="0.6"/>
+  <!-- 尾羽 -->
+  <path d="M48 32 Q54 28 56 30 Q54 34 50 36 Q48 35 48 32 Z" fill="#c9a84c"/>
+  <!-- 脚（左） -->
+  <rect x="26" y="48" width="4" height="8" rx="2" fill="#c9a84c"/>
+  <rect x="22" y="55" width="8" height="2" rx="1" fill="#c9a84c"/>
+  <!-- 脚（右） -->
+  <rect x="34" y="48" width="4" height="8" rx="2" fill="#c9a84c"/>
+  <rect x="30" y="55" width="8" height="2" rx="1" fill="#c9a84c"/>
+  <!-- 目 -->
+  <circle cx="19" cy="18" r="2" fill="#1a2744"/>
+  <circle cx="18.5" cy="17.5" r="0.6" fill="#c9a84c"/>
 </svg>
