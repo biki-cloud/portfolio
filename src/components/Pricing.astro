@@ -172,6 +172,22 @@
               </tr>
             ))}
 
+            {/* ── 注意事項 ── */}
+            <tr style="background-color: var(--color-border);">
+              <td colspan={3} class="py-2 pl-4 text-xs font-bold tracking-widest uppercase" style="color: var(--color-sub);">注意事項</td>
+            </tr>
+            {[
+              { label: 'ドメイン代', lite: '実費別途（年1,000〜2,000円）', full: '実費別途（年1,000〜2,000円）' },
+              { label: 'レイアウト・フォント変更', lite: '対応外', full: '対応外' },
+              { label: 'セクション・ページの追加', lite: '対応外', full: '対応外' },
+            ].map((row, i) => (
+              <tr style={`border-bottom: 1px solid var(--color-border); background-color: ${i % 2 === 0 ? 'var(--color-surface)' : 'transparent'};`}>
+                <td class="py-2 pl-4 font-medium" style="color: var(--color-text);">{row.label}</td>
+                <td class="py-2 px-4 text-center text-xs" style="color: var(--color-sub);">{row.lite}</td>
+                <td class="py-2 px-4 text-center text-xs" style="color: var(--color-sub);">{row.full}</td>
+              </tr>
+            ))}
+
             {/* ── こんな方に ── */}
             <tr style="background-color: var(--color-accent);">
               <td class="py-4 pl-4 text-xs font-bold tracking-widest uppercase text-white opacity-70">こんな方に</td>
@@ -181,10 +197,6 @@
           </tbody>
         </table>
       </div>
-      <p class="text-xs text-center mt-6" style="color: var(--color-sub);">
-        ※ ドメイン代（年1,000〜2,000円）は実費別途<br />
-        ※ レイアウト・フォント・セクション構成の変更は両プランとも対応外
-      </p>
     </div>
 
     <!-- モニター価格 -->
